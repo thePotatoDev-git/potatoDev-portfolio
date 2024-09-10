@@ -188,3 +188,19 @@
 			});
 
 })(jQuery);
+
+// Scrolling logo change
+
+document.addEventListener('scroll', function() {
+	// Scroll position based on percentage of page
+	let scrollPosition = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+	let logo = document.getElementById('logo');
+
+	if (scrollPosition < 33) {
+		logo.src = 'images/logo.png';
+	} else if (scrollPosition > 33 && scrollPosition < 66) {
+		logo.src = 'images/logo-mid.png';
+	} else {
+		logo.src = 'images/logo-end.png';
+	}
+});
